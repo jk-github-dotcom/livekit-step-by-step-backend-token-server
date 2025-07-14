@@ -1,0 +1,5 @@
+.ipynb_checkpoints/
+__pycache__/
+.venv_livekit_step_by_step
+.env
+.env.local
