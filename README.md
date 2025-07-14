@@ -23,13 +23,13 @@ python-dotenv
 
 **Install libraries**
 
-cd livekit-project-step-by-step/backend
+cd livekit-step-by-step/backend-token-server
 pip install -r requirements.txt
 pip freeze > .req_venv_livekit_step_by_step
 
 ## Run locally:
 
-cd livekit-project-step-by-step/backend
+cd livekit-step-by-step/backend-token-server
 uvicorn livekit_token_server:app --reload --host 0.0.0.0 --port 8000
 
 You can now access http://localhost:8000/token?identity=alice&room=test-room
@@ -43,9 +43,9 @@ You can now access http://localhost:8000/token?identity=alice&room=test-room
 ## Git and github
 
 git init
-git remote add origin https://github.com/yourusername/livekit_project_step_by_step_backend.git
+git remote add origin https://github.com/yourusername/livekit-step-by-step-backend-token-server.git
 git add .
-git commit -m "Initial commit: backend"
+git commit -m "Initial commit: backend token server"
 git push -u origin main
 
 
