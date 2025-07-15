@@ -61,6 +61,8 @@
 
 # If you leave it as "*" during development, it's fine — but in production you should limit it to your actual domain.
 
+# Best practice: Define a .env variable ALLOWED_ORIGINS and set for development and production.
+
 
 # In[13]:
 
@@ -73,12 +75,15 @@ from fastapi.middleware.cors import CORSMiddleware
 from livekit import api
 
 load_dotenv()
+ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
+
 app = FastAPI()
 
 # Allow requests from Vite dev server or Netlify
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, restrict this to your frontend URL
+#    allow_origins=["*"],  # In production, restrict this to your frontend URL
+    allow_origins=ALLOWED_ORIGINS, # In production, restrict this to your frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
